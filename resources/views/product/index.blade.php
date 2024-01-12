@@ -7,7 +7,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-               
+               <div class="card-body shadow">
+                <div class="mb-3">
+                  <a href="{{ route('product.create') }}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i>
+                  </a>
+                </div>
                 <table class="table">
                     <thead>
                       <tr>
@@ -33,6 +38,10 @@
                                     <a href="{{ route('product.edit',$product->id) }}" class="btn btn-outline-warning" >
                                       <i class="fas fa-pencil-alt"> </i>  
                                     </a>
+
+                                    <a href="{{ route('product.show',$product->id) }}" class="btn btn-outline-info" >
+                                      <i class="fas fa-info"> </i>  
+                                    </a>
                                 
                                     <form action="{{ route('product.destroy',$product->id) }}" method="post" class="d-inline-block">
                                       @method('delete')
@@ -49,6 +58,7 @@
                      
                     </tbody>
                   </table>
+               </div>
             </div>
         </div>
     </div>
